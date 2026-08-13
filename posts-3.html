@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (3/3) · t3b04-gs-club-look-1</title>
+  <meta name="description" content="t3b04-gs-club-look-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://magok-club-review.node-link.shop/posts-3.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ :root {
+ --bg-color: #0b0c10;
+ --card-color: #1f2833;
+ --neon-pink: #ff007f;
+ --neon-cyan: #00f0ff;
+ --text-color: #c5c6c7;
+ --title-color: #ffffff;
+ }
+ body {
+ background-color: var(--bg-color);
+ color: var(--text-color);
+ font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+ line-height: 1.6;
+ }
+ header {
+ border-bottom: 2px solid var(--neon-pink);
+ padding: 40px 20px;
+ text-align: center;
+ background: linear-gradient(180deg, #0b0c10 0%, #1f2833 100%);
+ box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+ }
+ header h1 {
+ color: var(--title-color);
+ font-size: 2.8rem;
+ margin: 0;
+ text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-cyan);
+ letter-spacing: 2px;
+ }
+ header p {
+ font-size: 1.1rem;
+ color: var(--neon-cyan);
+ margin: 10px 0 0 0;
+ text-transform: uppercase;
+ letter-spacing: 3px;
+ }
+ .container {
+ max-width: 1000px;
+ margin: 40px auto;
+ padding: 0 20px;
+ }
+ .intro-box {
+ background-color: var(--card-color);
+ border: 1px solid var(--neon-cyan);
+ border-radius: 8px;
+ padding: 30px;
+ margin-bottom: 40px;
+ box-shadow: 0 0 15px rgba(0, 240, 255, 0.15);
+ }
+ .intro-box h2 {
+ color: var(--neon-pink);
+ margin-top: 0;
+ font-size: 1.8rem;
+ border-left: 4px solid var(--neon-pink);
+ padding-left: 10px;
+ }
+ .spec-table {
+ width: 100%;
+ border-collapse: collapse;
+ margin: 20px 0;
+ background-color: #0b0c10;
+ }
+ .spec-table th, .spec-table td {
+ border: 1px solid #333;
+ padding: 12px;
+ text-align: left;
+ }
+ .spec-table th {
+ background-color: rgba(255, 0, 127, 0.1);
+ color: var(--neon-pink);
+ }
+ .spec-table td {
+ color: #fff;
+ }
+ .post-list {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 20px;
+ margin-bottom: 40px;
+ }
+ @media(max-width: 768px) {
+ .post-list {
+ grid-template-columns: 1fr;
+ }
+ }
+ .post-card {
+ background-color: var(--card-color);
+ border: 1px solid rgba(255, 255, 255, 0.1);
+ border-radius: 8px;
+ padding: 20px;
+ transition: all 0.3s ease;
+ }
+ .post-card:hover {
+ border-color: var(--neon-pink);
+ transform: translateY(-5px);
+ box-shadow: 0 5px 15px rgba(255, 0, 127, 0.2);
+ }
+ .post-card h3 {
+ margin-top: 0;
+ color: var(--title-color);
+ }
+ .post-card h3 a {
+ color: var(--title-color);
+ text-decoration: none;
+ transition: color 0.3s;
+ }
+ .post-card h3 a:hover {
+ color: var(--neon-cyan);
+ }
+ .post-card p {
+ font-size: 0.9rem;
+ color: #a0a0a0;
+ }
+ .story-section {
+ background-color: #12141a;
+ border-left: 5px solid var(--neon-cyan);
+ padding: 30px;
+ margin-bottom: 40px;
+ border-radius: 0 8px 8px 0;
+ }
+ .story-section h2 {
+ color: var(--neon-cyan);
+ margin-top: 0;
+ }
+ .review-section {
+ margin-bottom: 40px;
+ }
+ .review-section h2 {
+ color: var(--neon-pink);
+ text-shadow: 0 0 5px var(--neon-pink);
+ border-bottom: 1px solid #333;
+ padding-bottom: 10px;
+ }
+ .review-card {
+ background-color: var(--card-color);
+ border-radius: 8px;
+ padding: 20px;
+ margin-bottom: 20px;
+ border-right: 4px solid var(--neon-pink);
+ }
+ .review-card .meta {
+ font-size: 0.85rem;
+ color: var(--neon-cyan);
+ margin-bottom: 10px;
+ }
+ .review-card p {
+ margin: 0;
+ font-style: italic;
+ }
+ .cta-section {
+ background: linear-gradient(90deg, var(--neon-pink) 0%, #a200ff 100%);
+ border-radius: 8px;
+ padding: 30px;
+ text-align: center;
+ box-shadow: 0 0 25px rgba(255, 0, 127, 0.4);
+ }
+ .cta-section h2 {
+ margin-top: 0;
+ color: #fff;
+ font-size: 2rem;
+ text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+ }
+ .cta-section p {
+ color: #fff;
+ font-size: 1.1rem;
+ }
+ .btn-call {
+ display: inline-block;
+ background-color: #0b0c10;
+ color: var(--neon-cyan);
+ border: 2px solid var(--neon-cyan);
+ padding: 15px 35px;
+ font-size: 1.3rem;
+ font-weight: bold;
+ text-decoration: none;
+ border-radius: 50px;
+ margin-top: 20px;
+ transition: all 0.3s;
+ box-shadow: 0 0 10px var(--neon-cyan);
+ }
+ .btn-call:hover {
+ background-color: var(--neon-cyan);
+ color: #0b0c10;
+ box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px #fff;
+ transform: scale(1.05);
+ }
+ footer {
+ text-align: center;
+ padding: 30px 20px;
+ border-top: 1px solid #333;
+ color: #666;
+ font-size: 0.85rem;
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (3/3) · t3b04-gs-club-look-1">
+  <meta property="og:description" content="t3b04-gs-club-look-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://magok-club-review.node-link.shop/posts-3.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <h1>GS CLUB LOOKBOOK</h1>
+ <p>Neon Cyberpunk Aesthetic & Fashion Database</p>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 44개 · 3/3 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-001-1n6gcik.html">강서 클럽 룩북 처음 알아볼 때 실제로 많이 묻는 질문 5가지</a>
+        <p class="post-item__summary">강서 지역에서 클럽 룩북을 처음 접하는 분들이 가장 궁금해하는 점은 무엇인지 정리해 보았습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-001.html">강서 클럽 룩북, 한정판 스니커즈의 숨은 디테일</a>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/review-002.html">발산/마곡 클럽 투어 및 룩북 실전 매칭 후기</a>
+        <p class="post-item__summary">어이 브로, 형이다! 지난주 마곡 테크노벨리 뒤편 힙한 지하 클럽이랑 발산 쪽 라운지를 돌면서 형이 제안했던 강서 클럽 룩북 실전 매칭 코디를 입고 미친 듯이 밤을 불태운 후기를 전한다. 이번엔 특</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/t3link-006.html">유니콘은 진짜 꿈이었을까? 블레이드 러너 &amp;lt;파이널 컷&amp;gt; 편집실의 은밀한 진실, 그리고 스콧 감독의 변덕</a>
+        <p class="post-item__summary">처음 시나리오는 뭐, 좀 더 밋밋했어. 릭 데커드가 그냥 좀 힘든 하루를 보내고 집에 가는 그런 느낌? 근데 스콧 감독이 어느 날 갑자기 “야, 데커드한테 뭔가 좀 더… ‘인간적인’ 면모를 보여줘야</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <a class="pager__link" href="posts-2.html">2</a>
+      <span class="pager__current">3</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
